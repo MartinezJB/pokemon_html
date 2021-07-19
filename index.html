@@ -7,24 +7,24 @@
     <link rel="stylesheet" href="./style.css">
     <title>Pokémon | Play</title>
 </head>
-<body>
+<body onload="actualizarEscenario()">
 
     <div class="container">
 
         <div class="interfaz-jugador">
 
             
-            <img class="pokemon-jugador" src="./sources/images/sprites/charizard_player2d.gif" alt="charizard de jugador">
+            <img class="pokemon-jugador" id="pokemon-jugador" name="Charizard" src="./sources/images/sprites/charizard_player2d.gif" alt="charizard de jugador">
 
             <table class="botones">
                 <tr>
-                    <td>ATAQUE1</td>
-                    <td>ATAQUE2</td>
+                    <td id="ATAQUE1" onclick="pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[0])">ATAQUE1</td>
+                    <td id="ATAQUE2" onclick="pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[1])">ATAQUE2</td>
                 </tr>
 
                 <tr>
-                    <td>ATAQUE3</td>
-                    <td>ATAQUE4</td>
+                    <td id="ATAQUE3" onclick="pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[2])">ATAQUE3</td>
+                    <td id="ATAQUE4" onclick="pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[3])">ATAQUE4</td>
                 </tr>
             </table>
 
@@ -32,10 +32,15 @@
 
 
         <div>
-            <img class="pokemon-rival" src="./sources/images/sprites/sceptile.gif" alt="sceptile rival">
+            <img class="pokemon-rival" id="pokemon-rival" name="Sceptile" src="./sources/images/sprites/sceptile.gif" alt="sceptile rival">
         </div>
 
     </div>
+
+    <script src="./scripts/tipos_pokemon.js"></script>
+    <script src="scripts/movimientos.js"></script>
+    <script src="./scripts/pokemon.js"></script>
+    <script src="./scripts/app.js"></script>
 
 </body>
 </html>
