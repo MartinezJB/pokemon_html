@@ -16,21 +16,41 @@
             
             <img class="pokemon-jugador" id="pokemon-jugador" name="Charizard" src="./sources/images/sprites/charizard_player2d.gif" alt="charizard de jugador">
 
+            <div class="containerVida">
+                <div class="datosPoke">
+                    <p class="nombrePoke">Charizard</p>
+                    <p class="nivel" id="nivel">lvl 57</p>
+                </div>
+                <progress id="barraVida" max="100" min="0" value="78"></progress>
+                <label id="totalVida" for="barraVida">78/100</label>
+            </div>
+            
+            <div class="ventanaGrafica">
+                <p class="texto">Tu turno</p>
+            </div>
+
             <table class="botones">
                 <tr>
-                    <td id="ATAQUE1" onclick="pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[0])">ATAQUE1</td>
-                    <td id="ATAQUE2" onclick="pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[1])">ATAQUE2</td>
+                    <td id="ATAQUE1">ATAQUE1</td>
+                    <td id="ATAQUE2">ATAQUE2</td>
                 </tr>
 
                 <tr>
-                    <td id="ATAQUE3" onclick="pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[2])">ATAQUE3</td>
-                    <td id="ATAQUE4" onclick="pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[3])">ATAQUE4</td>
+                    <td id="ATAQUE3">ATAQUE3</td>
+                    <td id="ATAQUE4">ATAQUE4</td>
                 </tr>
             </table>
 
         </div>
 
 
+        <div class="contenedorVidaRival">
+            <div class="datosPokeRival">
+                <p class="nombreEnemigo">Sceptile</p>
+                <p class="nivelRival" id="nivelRival">lvl 55</p>
+            </div>
+            <progress max="100" min="0" value="70"></progress>
+        </div>
         <div>
             <img class="pokemon-rival" id="pokemon-rival" name="Sceptile" src="./sources/images/sprites/sceptile.gif" alt="sceptile rival">
         </div>
