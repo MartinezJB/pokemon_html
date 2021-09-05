@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="./style.css">
     <title>Pokémon | Play</title>
 </head>
-<body onload="actualizarEscenario()">
+<body>
 
     <div class="container">
-
+ 
         <div class="interfaz-jugador">
 
             
@@ -18,15 +18,15 @@
 
             <div class="containerVida">
                 <div class="datosPoke">
-                    <p class="nombrePoke">Charizard</p>
+                    <p class="nombrePoke" id="nombrePokeJugador">XXXXXX</p>
                     <p class="nivel" id="nivel">lvl 57</p>
                 </div>
-                <progress id="barraVida" max="100" min="0" value="78"></progress>
-                <label id="totalVida" for="barraVida">78/100</label>
+                <progress id="barraVida" max="0" min="0" value="0"></progress>
+                <label id="totalVida" for="barraVida"><span id="vidaActual">0</span>/<span id="vidaMaxima">0</span></label>
             </div>
             
-            <div class="ventanaGrafica">
-                <p class="texto">Tu turno</p>
+            <div class="ventanaGrafica" id="mensaje">
+                <p class="texto">Escoge tu ataque</p>
             </div>
 
             <table class="botones">
@@ -46,17 +46,15 @@
 
         <div class="contenedorVidaRival">
             <div class="datosPokeRival">
-                <p class="nombreEnemigo">Sceptile</p>
+                <p class="nombreEnemigo" id="nombrePokeRival">XXXXXX</p>
                 <p class="nivelRival" id="nivelRival">lvl 55</p>
             </div>
-            <progress max="100" min="0" value="70"></progress>
+            <progress id="vidaRival" max="0" min="0" value="0"></progress>
         </div>
         <div>
             <img class="pokemon-rival" id="pokemon-rival" name="Sceptile" src="./sources/images/sprites/sceptile.gif" alt="sceptile rival">
         </div>
-
     </div>
-
     <script src="./scripts/tipos_pokemon.js"></script>
     <script src="scripts/movimientos.js"></script>
     <script src="./scripts/pokemon.js"></script>

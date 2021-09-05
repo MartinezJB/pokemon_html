@@ -6,8 +6,8 @@ class Pokemon {
         this.puntosDeDanio = _puntosDeDanio;
         this.puntosDeDefensa = _puntosDeDefensa;
         this.movimientos = _movimientos;
+        
     }
-
     atacarEnemigo(enemigo, ataque){
         if(ataque.usos > 0){
             ataque.usos -= 1;
