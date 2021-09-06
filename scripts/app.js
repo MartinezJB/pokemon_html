@@ -37,6 +37,7 @@ function prepararVidas() {
 }
 function actualizarVidaRival() {
     document.getElementById("vidaRival").value = pokemonRival.vida;
+    animateprogress("vidaRival", pokemonRival.vida)
 }
 
 function actualizarVidaJugador() {
@@ -44,6 +45,8 @@ function actualizarVidaJugador() {
 }
 
 function actualizarMensaje(mensaje) {
-    document.getElementById("mensaje").innerHTML = mensaje;
+    document.getElementById("texto").innerHTML = mensaje;
 }
 document.getElementsByTagName("body")[0].addEventListener("load", actualizarEscenario())
+
+window.addEventListener("load", alert('¡ESTA APP ESTÁ EN CONSTRUCCIÓN!\nSe recomienda usar la resolución a partir de 1050px por 540px para una mejor experiencia'))
