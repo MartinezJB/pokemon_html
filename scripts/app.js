@@ -14,12 +14,16 @@ function actualizarJugador(){
     for(let i=0; i < pokemonJugador.movimientos.length; i++){
         document.getElementById("ATAQUE" + (i+1)).innerHTML = pokemonJugador.movimientos[i].nombre;
         document.getElementById("ATAQUE" + (i+1)).addEventListener("click",function() 
-            {                
-                actualizarMensaje(`${pokemonJugador.nombre} usó ${pokemonJugador.movimientos[i].nombre}`)
-                let movimientoActual = setTimeout(function() {
-                    actualizarMensaje(pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[i]));
-                    actualizarVidaRival();
-                }, 3000);
+            {   
+                if(pokemonJugador.vida > 0 && pokemonRival.vida > 0) {
+                    actualizarMensaje(`${pokemonJugador.nombre} usó ${pokemonJugador.movimientos[i].nombre}`)
+                    let movimientoActual = setTimeout(function() {
+                        actualizarMensaje(pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[i]));
+                        actualizarVidaRival();
+                    }, 3000);
+                }else {
+                    actualizarMensaje(`${pokemonRival.nombre} ganó`)
+                }          
             })
     }
 }
