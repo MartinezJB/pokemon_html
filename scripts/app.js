@@ -1,7 +1,8 @@
-const movimientosCharizard = [GarraAfilada, LanzaLlamas, Arañazo, Vuelo];
+const movimientosPokeJugador = [GarraAfilada, LanzaLlamas, Arañazo, Vuelo];
+const movimientosPokeRival = [Arañazo, GolpeCertero, ColaAspera, HojaAfilada];
 
-const pokemonJugador = new Charizard(movimientosCharizard);
-const pokemonRival = new Sceptile();
+const pokemonJugador = new Charizard(movimientosPokeJugador);
+const pokemonRival = new Sceptile(movimientosPokeRival);
 
 
 
@@ -14,8 +15,11 @@ function actualizarJugador(){
         document.getElementById("ATAQUE" + (i+1)).innerHTML = pokemonJugador.movimientos[i].nombre;
         document.getElementById("ATAQUE" + (i+1)).addEventListener("click",function() 
             {                
-                actualizarMensaje(pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[i]))
-                actualizarVidaRival();
+                actualizarMensaje(`${pokemonJugador.nombre} usó ${pokemonJugador.movimientos[i].nombre}`)
+                let movimientoActual = setTimeout(function() {
+                    actualizarMensaje(pokemonJugador.atacarEnemigo(pokemonRival, pokemonJugador.movimientos[i]));
+                    actualizarVidaRival();
+                }, 3000);
             })
     }
 }
@@ -37,11 +41,11 @@ function prepararVidas() {
 }
 function actualizarVidaRival() {
     document.getElementById("vidaRival").value = pokemonRival.vida;
-    animateprogress("vidaRival", pokemonRival.vida)
 }
 
 function actualizarVidaJugador() {
-    document.getElementById("barraVida").value = pokemonJugador.vida
+    document.getElementById("barraVida").value = pokemonJugador.vida;
+    document.getElementById("vidaActual").innerHTML = pokemonJugador.vida;
 }
 
 function actualizarMensaje(mensaje) {
